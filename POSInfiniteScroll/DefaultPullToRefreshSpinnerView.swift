@@ -24,12 +24,11 @@ final class DefaultPullToRefreshSpinnerView: UIView, PullToRefreshSpinnerViewPro
     func startAnimating() {
         let animation = CAKeyframeAnimation(keyPath: "opacity")
         let timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        let duration: CFTimeInterval = 1.2
         
         animation.keyTimes = [0, 0.5, 1]
         animation.timingFunctions = [timingFunction, timingFunction]
         animation.values = [1, 0.1, 1]
-        animation.duration = duration
+        animation.duration = 1.2
         animation.repeatCount = HUGE
         animation.isRemovedOnCompletion = false
         
@@ -51,6 +50,7 @@ final class DefaultPullToRefreshSpinnerView: UIView, PullToRefreshSpinnerViewPro
         isAnimating = false
         layer.removeAllAnimations()
         layer.sublayers?.forEach { $0.removeAllAnimations() }
+        layer.sublayers?.forEach { $0.removeFromSuperlayer() }
     }
     
     override var frame: CGRect {
@@ -70,7 +70,7 @@ final class DefaultPullToRefreshSpinnerView: UIView, PullToRefreshSpinnerViewPro
         let lineSize = CGSize(width: (sizeValue - 4 * lineSpacing) / 8, height: (sizeValue - 2 * lineSpacing) / 3)
         let layers = layer.sublayers as? [CustomLayer]
         if layers?.first(where: { $0.tag == index }) != nil { return nil }
-        let line = lineAt(angle: CGFloat.pi / 4 * CGFloat(index),
+        let line = lineAt(angle: CGFloat.pi / 4 * CGFloat(index - 1),
                           size: lineSize,
                           origin: center,
                           containerSize: CGSize(width: sizeValue, height: sizeValue),

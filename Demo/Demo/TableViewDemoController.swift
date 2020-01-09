@@ -23,16 +23,14 @@ final class TableViewDemoController: UIViewController {
         addPullToRefresh()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.tableView.beginPullToRefresh()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.page = 0
-                self.items = Array.randomElements
-                self.tableView.reloadData()
-                self.tableView.finishPullToRefresh()
-            }
+    @IBAction private func didPressBeginPullToRefresh(_ sender: UIButton) {
+        tableView.beginPullToRefresh()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+            self?.page = 0
+            self?.items = Array.randomElements
+            self?.tableView.reloadData()
+            self?.tableView.finishPullToRefresh()
+            self?.addInfiniteScroll()
         }
     }
     

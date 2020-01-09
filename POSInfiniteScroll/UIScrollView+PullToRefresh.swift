@@ -21,6 +21,9 @@ extension UIScrollView {
         heightConstraint?.constant = settings.triggerOffset
         pullToRefreshSpinnerView?.startAnimating()
 
+        var point = CGPoint.zero
+        point.y -= contentInset.top
+        setContentOffset(point, animated: true)
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.contentOffset.y -= settings.triggerOffset
             self?.contentInset.top += settings.triggerOffset
@@ -40,25 +43,21 @@ extension UIScrollView {
         UIView.animate(withDuration: 0.3, animations: { [weak self] in
             self?.contentInset.top -= settings.triggerOffset
             self?.layoutIfNeeded()
-        }) { [weak self] _ in
+        }) { _ in
             settings.requestInProgress = false
-            self?.removeLoaderView(settings)
             completion?()
+            settings.spinnerView?.stopAnimating()
         }
     }
     
     public func removePullToRefresh() {
         pullToRefreshSettings.removeValue(forKey: objectAddress)
+        guard let settings = pullToRefreshSettings[objectAddress] else { return }
+        removeLoaderView(settings)
     }
     
     func showPullToRefreshLoader(settings: PullToRefreshSettings) {
-        guard contentOffsetY < 0, settings.enabled else {
-            let translation = panGestureRecognizer.translation(in: superview)
-            if !isTracking && translation.y > 0 {
-                removeLoaderView(settings)
-            }
-            return
-        }
+        guard contentOffsetY < 0, settings.enabled else { return }
         addLoaderView(settings)
         setLoaderViewHeight(settings)
         setSpinnerProgress(settings)
