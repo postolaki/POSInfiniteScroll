@@ -1,0 +1,6 @@
+framework module POSInfiniteScroll {
+  umbrella header "POSInfiniteScroll-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,23 @@
+PODS:
+  - lottie-ios (3.1.5)
+  - POSInfiniteScroll (1.0.3)
+
+DEPENDENCIES:
+  - lottie-ios
+  - POSInfiniteScroll (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - lottie-ios
+
+EXTERNAL SOURCES:
+  POSInfiniteScroll:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  POSInfiniteScroll: 28773f27940c04d0cec4b5772c5f40be7d5ff870
+
+PODFILE CHECKSUM: 69f56ae2ae22e14c78271d7fb2820a1ce0bc7c6d
+
+COCOAPODS: 1.9.0.beta.2
