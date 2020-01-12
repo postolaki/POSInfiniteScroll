@@ -5,11 +5,11 @@ Pod::Spec.new do |s|
   s.summary = "POSInfiniteScroll"
   s.requires_arc = true
 
-  s.version = "1.0.5"
+  s.version = "1.0.6"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author  = { "Ivan" => "ivan.postolaki@gmail.com" }
   s.homepage = "https://github.com/postolaki/POSInfiniteScroll"
-  s.source = { :git => "https://github.com/postolaki/POSInfiniteScroll.git", :tag => "v1.0.5"}
+  s.source = { :git => "https://github.com/postolaki/POSInfiniteScroll.git", :tag => "v1.0.6"}
 
   s.swift_version = "5"
   s.frameworks = "Foundation", "UIKit"

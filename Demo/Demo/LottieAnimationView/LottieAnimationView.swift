@@ -6,9 +6,7 @@ final class LottieAnimationView: UIView, PullToRefreshSpinnerViewProtocol {
     
     private let animationView: AnimationView
     
-    var isAnimating: Bool {
-        return animationView.isAnimationPlaying
-    }
+    var isAnimating: Bool = false
     
     var progress: CGFloat {
         get {
@@ -46,10 +44,12 @@ final class LottieAnimationView: UIView, PullToRefreshSpinnerViewProtocol {
     }
     
     func startAnimating() {
+        isAnimating = true
         animationView.play()
     }
     
     func stopAnimating() {
         animationView.stop()
+        isAnimating = false
     }
 }

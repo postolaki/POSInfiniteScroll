@@ -89,11 +89,14 @@ extension UIScrollView {
     
     private func setSpinnerProgress(_ settings: PullToRefreshSettings) {
         let heightConstraint = settings.loaderView.constraints.first(where: { $0.identifier == "height" })
-        let progress = (heightConstraint?.constant ?? 0) / settings.triggerOffset
-        settings.spinnerView?.progress = min(progress, 1)
-        if progress == 1 && !(pullToRefreshSpinnerView?.isAnimating ?? false) {
-            pullToRefreshSpinnerView?.startAnimating()
-            vibrate()
+        var progress = (heightConstraint?.constant ?? 0) / settings.triggerOffset
+        progress = min(progress, 1)
+        if pullToRefreshSpinnerView?.isAnimating == false {
+            settings.spinnerView?.progress = progress
+            if progress == 1 {
+                pullToRefreshSpinnerView?.startAnimating()
+                vibrate()
+            }
         }
     }
     

@@ -8,14 +8,16 @@
 import UIKit
 
 final class DefaultPullToRefreshSpinnerView: UIView, PullToRefreshSpinnerViewProtocol {
+    private let numberOfLines = 8
+    
     var progress: CGFloat = 0 {
         didSet {
-            let oldNumberOfLines = Int(CGFloat(8) * oldValue)
-            let numberOfLines = Int(CGFloat(8) * progress)
-            if oldNumberOfLines > numberOfLines {
+            let oldNumberOfLines = Int(CGFloat(numberOfLines) * oldValue)
+            let currentNumberOfLines = Int(CGFloat(numberOfLines) * progress)
+            if oldNumberOfLines > currentNumberOfLines {
                 removeLine(index: oldNumberOfLines)
-            } else if numberOfLines > oldNumberOfLines {
-                addLine(index: numberOfLines)
+            } else if currentNumberOfLines > oldNumberOfLines {
+                addLine(index: currentNumberOfLines)
             }
         }
     }
@@ -36,7 +38,7 @@ final class DefaultPullToRefreshSpinnerView: UIView, PullToRefreshSpinnerViewPro
         let beginTimes: [CFTimeInterval] = [0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84, 0.96]
         layer.sublayers?.forEach { $0.removeFromSuperlayer() }
         
-        for idx in 0 ..< 8 {
+        for idx in 0 ..< numberOfLines {
             let line = addLine(index: idx)
             line?.tag = idx
             animation.beginTime = beginTime + beginTimes[idx]
@@ -64,10 +66,10 @@ final class DefaultPullToRefreshSpinnerView: UIView, PullToRefreshSpinnerViewPro
     @discardableResult
     private func addLine(index: Int) -> CustomLayer? {
         let lineSpacing: CGFloat = 2
-        let defaultPadding: CGFloat = 4.0
+        let defaultPadding: CGFloat = 0
         let sizeValue = frame.width - defaultPadding
         let center = CGPoint(x: (sizeValue / 2) + (defaultPadding / 2), y: (sizeValue/2) + (defaultPadding / 2))
-        let lineSize = CGSize(width: (sizeValue - 4 * lineSpacing) / 8, height: (sizeValue - 2 * lineSpacing) / 3)
+        let lineSize = CGSize(width: (sizeValue - 4 * lineSpacing) / CGFloat(numberOfLines), height: (sizeValue - 2 * lineSpacing) / 3)
         let layers = layer.sublayers as? [CustomLayer]
         if layers?.first(where: { $0.tag == index }) != nil { return nil }
         let line = lineAt(angle: CGFloat.pi / 4 * CGFloat(index - 1),
@@ -88,6 +90,8 @@ final class DefaultPullToRefreshSpinnerView: UIView, PullToRefreshSpinnerViewPro
     }
     
     private func lineAt(angle: CGFloat, size: CGSize, origin: CGPoint, containerSize: CGSize, color: UIColor) -> CustomLayer {
+        var angle = angle
+        angle += 3 * CGFloat.pi / 2
         let radius = (containerSize.width / 2 - max(size.width, size.height) / 2) - 2
         let lineContainerSize = CGSize(width: max(size.width, size.height), height: max(size.width, size.height))
         let lineContainer = CustomLayer()
