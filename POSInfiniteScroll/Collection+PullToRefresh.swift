@@ -12,6 +12,7 @@ extension UITableView {
     public func addPullToRefresh(_ completion: @escaping (UITableView) -> Void) {
         let settings = pullToRefreshSettings[objectAddress] ?? PullToRefreshSettings()
         settings.enabled = true
+        settings.initialContentInset = contentInset
         pullToRefreshSettings[objectAddress] = settings
         settings.completion = { scrollView in
             if let tableView = scrollView as? UITableView {
@@ -26,6 +27,7 @@ extension UICollectionView {
         if !canAddPullToRefresh() { return }
         let settings = pullToRefreshSettings[objectAddress] ?? PullToRefreshSettings()
         settings.enabled = true
+        settings.initialContentInset = contentInset
         pullToRefreshSettings[objectAddress] = settings
         settings.completion = { scrollView in
             if let collectionView = scrollView as? UICollectionView {

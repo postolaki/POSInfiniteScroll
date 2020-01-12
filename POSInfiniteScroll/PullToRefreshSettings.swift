@@ -15,9 +15,11 @@ public protocol PullToRefreshSpinnerViewProtocol: SpinnerViewProtocol {
 final class PullToRefreshSettings {
     var enabled: Bool = false
     var requestInProgress: Bool = false
+    var isFromBeginToRefresh: Bool = false
     var completion: ((UIScrollView) -> Void)?
     var spinnerView: PullToRefreshSpinnerViewProtocol?
     var triggerOffset: CGFloat = 80
+    var initialContentInset: UIEdgeInsets = .zero
     lazy var loaderView: UIView = createLoaderView()
     
     private func createLoaderView() -> UIView {

@@ -37,7 +37,7 @@ extension UIScrollView {
         heightConstraint.identifier = "height"
         heightConstraint.isActive = true
         NSLayoutConstraint(item: loaderView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: loaderView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: loaderView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
         layoutIfNeeded()
     }
     
@@ -47,5 +47,6 @@ extension UIScrollView {
         NSLayoutConstraint(item: spinner, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: spinner.frame.height).isActive = true
         NSLayoutConstraint(item: spinner, attribute: .centerX, relatedBy: .equal, toItem: loaderView, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: spinner, attribute: .centerY, relatedBy: .equal, toItem: loaderView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+        layoutIfNeeded()
     }
 }

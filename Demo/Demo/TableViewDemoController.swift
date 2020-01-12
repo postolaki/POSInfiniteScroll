@@ -19,6 +19,7 @@ final class TableViewDemoController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        tableView.contentInset = UIEdgeInsets(top: 80, left: 0, bottom: 0, right: 0)
         addInfiniteScroll()
         addPullToRefresh()
     }
