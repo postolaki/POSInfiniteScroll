@@ -10,12 +10,38 @@ To run the example project clone the repo and run `pod install` from the Demo di
 
 ## Installation
 
+## CocoaPods
+
 POSInfiniteScroll is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'POSInfiniteScroll'
 ```
+
+## Carthage
+Add POSInfiniteScroll to your Cartfile:
+```
+github "postolaki/posinfinitescroll"
+```
+
+And then run:
+```
+carthage update or carthage update --use-xcframeworks
+```
+
+## Swift Package Manager
+
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
+
+Once you have your Swift package set up, adding POSInfiniteScroll as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/postolaki/POSInfiniteScroll.git")
+]
+```
+
 
 ```swift
 import POSInfiniteScroll

@@ -17,6 +17,13 @@ extension UIScrollView {
         method_exchangeImplementations(originalMethod, swizzledMethod)
     }
     
+    open override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        DispatchQueue.once(token: "swizzledContentOffset") {
+            UIScrollView.swizzleContentOffset()
+        }
+    }
+    
     @objc private var swizzledContentOffset: CGPoint {
         get {
             let collectionView = self as? UICollectionView
@@ -48,5 +55,20 @@ extension UIScrollView {
     
     var objectAddress: String {
         return String(format: "%p", self)
+    }
+}
+
+extension DispatchQueue {
+    private static var _onceTracker = [String]()
+
+    class func once(token: String, block: @escaping() -> Void) {
+        objc_sync_enter(self); defer { objc_sync_exit(self) }
+
+        if _onceTracker.contains(token) {
+            return
+        }
+
+        _onceTracker.append(token)
+        block()
     }
 }

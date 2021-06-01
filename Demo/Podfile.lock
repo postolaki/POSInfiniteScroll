@@ -1,6 +1,6 @@
 PODS:
-  - lottie-ios (3.1.5)
-  - POSInfiniteScroll (1.0.3)
+  - lottie-ios (3.2.3)
+  - POSInfiniteScroll (1.0.6)
 
 DEPENDENCIES:
   - lottie-ios
@@ -15,9 +15,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
-  POSInfiniteScroll: 28773f27940c04d0cec4b5772c5f40be7d5ff870
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  POSInfiniteScroll: ed0d90ce561838b0216253d1c2e0dc4697130f3f
 
 PODFILE CHECKSUM: 69f56ae2ae22e14c78271d7fb2820a1ce0bc7c6d
 
-COCOAPODS: 1.9.0.beta.2
+COCOAPODS: 1.10.1
