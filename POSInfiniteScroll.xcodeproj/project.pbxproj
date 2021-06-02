@@ -13,12 +13,10 @@
 		0A3A185F23B37098005DC906 /* UIScrollView+AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185323B37098005DC906 /* UIScrollView+AssociatedObject.swift */; };
 		0A3A186023B37098005DC906 /* UIScrollView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185423B37098005DC906 /* UIScrollView+Constraints.swift */; };
 		0A3A186123B37098005DC906 /* UIScrollView+Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185523B37098005DC906 /* UIScrollView+Swizzle.swift */; };
-		0A3A186223B37098005DC906 /* SwizzleLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3A185623B37098005DC906 /* SwizzleLoader.h */; };
 		0A3A186323B37098005DC906 /* DefaultPullToRefreshSpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185723B37098005DC906 /* DefaultPullToRefreshSpinnerView.swift */; };
 		0A3A186423B37098005DC906 /* UIScrollView+InfiniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185823B37098005DC906 /* UIScrollView+InfiniteScroll.swift */; };
 		0A3A186523B37098005DC906 /* Collection+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185923B37098005DC906 /* Collection+PullToRefresh.swift */; };
 		0A3A186623B37098005DC906 /* Collection+IniteScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185A23B37098005DC906 /* Collection+IniteScroll.swift */; };
-		0A3A186723B37098005DC906 /* SwizzleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185B23B37098005DC906 /* SwizzleLoader.m */; };
 		0A3A186823B37098005DC906 /* InfiniteScrollSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A185C23B37098005DC906 /* InfiniteScrollSettings.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,12 +29,10 @@
 		0A3A185323B37098005DC906 /* UIScrollView+AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+AssociatedObject.swift"; sourceTree = "<group>"; };
 		0A3A185423B37098005DC906 /* UIScrollView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Constraints.swift"; sourceTree = "<group>"; };
 		0A3A185523B37098005DC906 /* UIScrollView+Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Swizzle.swift"; sourceTree = "<group>"; };
-		0A3A185623B37098005DC906 /* SwizzleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwizzleLoader.h; sourceTree = "<group>"; };
 		0A3A185723B37098005DC906 /* DefaultPullToRefreshSpinnerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPullToRefreshSpinnerView.swift; sourceTree = "<group>"; };
 		0A3A185823B37098005DC906 /* UIScrollView+InfiniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+InfiniteScroll.swift"; sourceTree = "<group>"; };
 		0A3A185923B37098005DC906 /* Collection+PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+PullToRefresh.swift"; sourceTree = "<group>"; };
 		0A3A185A23B37098005DC906 /* Collection+IniteScroll.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+IniteScroll.swift"; sourceTree = "<group>"; };
-		0A3A185B23B37098005DC906 /* SwizzleLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwizzleLoader.m; sourceTree = "<group>"; };
 		0A3A185C23B37098005DC906 /* InfiniteScrollSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,8 +71,6 @@
 				0A3A185723B37098005DC906 /* DefaultPullToRefreshSpinnerView.swift */,
 				0A3A185C23B37098005DC906 /* InfiniteScrollSettings.swift */,
 				0A3A185223B37098005DC906 /* PullToRefreshSettings.swift */,
-				0A3A185623B37098005DC906 /* SwizzleLoader.h */,
-				0A3A185B23B37098005DC906 /* SwizzleLoader.m */,
 				0A3A185323B37098005DC906 /* UIScrollView+AssociatedObject.swift */,
 				0A3A185423B37098005DC906 /* UIScrollView+Constraints.swift */,
 				0A3A185823B37098005DC906 /* UIScrollView+InfiniteScroll.swift */,
@@ -95,7 +89,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A3A186223B37098005DC906 /* SwizzleLoader.h in Headers */,
 				0A19185A23AE3DBF00499C6B /* POSInfiniteScroll.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,7 +170,6 @@
 				0A3A186123B37098005DC906 /* UIScrollView+Swizzle.swift in Sources */,
 				0A3A185D23B37098005DC906 /* UIScrollView+PullToRefresh.swift in Sources */,
 				0A3A185F23B37098005DC906 /* UIScrollView+AssociatedObject.swift in Sources */,
-				0A3A186723B37098005DC906 /* SwizzleLoader.m in Sources */,
 				0A3A186623B37098005DC906 /* Collection+IniteScroll.swift in Sources */,
 				0A3A186523B37098005DC906 /* Collection+PullToRefresh.swift in Sources */,
 			);
