@@ -1,0 +1,16 @@
+name: remote ssh command
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: deploy documentation
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.DEPLOY_HOST }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        script: ls
