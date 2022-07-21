@@ -13,5 +13,5 @@ jobs:
       with:
         host: 104.237.10.70
         username: deploy
-        key: ${{ secrets.PRIVATE_KEY }}
+        key: ${{ secrets.DEPLOY_KEY }}
         script: ls
