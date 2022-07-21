@@ -14,4 +14,4 @@ jobs:
         host: 104.237.10.70
         username: deploy
         key: ${{ secrets.DEPLOY_KEY }}
-        script: ls
+        script: ~/deploy_documentation.sh
