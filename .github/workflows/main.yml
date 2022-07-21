@@ -11,6 +11,7 @@ jobs:
     - name: deploy documentation
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.DEPLOY_HOST }}
+        host: 104.237.10.70
+        username: deploy
         key: ${{ secrets.PRIVATE_KEY }}
         script: ls
