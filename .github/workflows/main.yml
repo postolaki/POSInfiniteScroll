@@ -3,14 +3,8 @@ on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: easingthemes/ssh-deploy@v2.2.11
-        with:
-          hosts: ${{ secrets.DEPLOY_HOST }}
-          privateKey: ${{ secrets.PRIVATE_KEY }}
-          COMMAND: ls
+  uses: easingthemes/ssh-deploy@v2.2.11
+    with:
+      hosts: ${{ secrets.DEPLOY_HOST }}
+      privateKey: ${{ secrets.PRIVATE_KEY }}
+      command: ls
