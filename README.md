@@ -16,7 +16,7 @@ POSInfiniteScroll is available through [CocoaPods](https://cocoapods.org). To in
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'POSInfiniteScroll'
+pod POSInfiniteScroll
 ```
 
 ## Carthage
@@ -57,7 +57,7 @@ tableView.addInfiniteScroll { tableView in
 
 collectionView.addInfiniteScroll { collectionView in
     // finish infinite scroll animation
-	collectionView.reloadDataAndFinishInfIniteScroll()
+    collectionView.reloadDataAndFinishInfIniteScroll()
 }
 
 tableView.shouldRemoveInfiniteScrollHandler = { _ in
@@ -91,7 +91,7 @@ var infiniteScrollSpinnerView: SpinnerViewProtocol?
 // setup pull to refresh
 tableView.addPullToRefresh { tableView in
     // finish pull to refresh animation
-	tableView.finishPullToRefresh()
+    tableView.finishPullToRefresh()
 }
 
 collectionView.addPullToRefresh { collectionView in
