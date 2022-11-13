@@ -1,10 +1,10 @@
-// swift-tools-version:5.3
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version:5.7
+
 import PackageDescription
 
 let package = Package(
     name: "POSInfiniteScroll",
-    platforms: [.iOS(.v10)],
+    platforms: [.iOS(.v11)],
     products: [
         .library(
             name: "POSInfiniteScroll",
@@ -14,9 +14,7 @@ let package = Package(
         .target(name: "POSInfiniteScroll",
                 path: "POSInfiniteScroll",
                 exclude: ["Info.plist",
-                          "POSInfiniteScroll.h",
-                          "SwizzleLoader.h",
-                          "SwizzleLoader.m"])
+                          "POSInfiniteScroll.h"])
     ],
     swiftLanguageVersions: [.v5]
 )

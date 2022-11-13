@@ -1,9 +1,0 @@
-platform :ios, '10.0'
-
-target 'Demo' do
-  use_frameworks!
-
-  pod 'lottie-ios'
-  pod 'POSInfiniteScroll', :path => "../"
-
-end

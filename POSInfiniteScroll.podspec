@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary = "POSInfiniteScroll"
   s.requires_arc = true
 
-  s.version = "1.0.7"
+  s.version = "1.0.8"
   s.license = { :type => "MIT", :file => "LICENSE" }
   s.author  = { "Ivan" => "ivan.postolaki@gmail.com" }
   s.homepage = "https://github.com/postolaki/POSInfiniteScroll"
